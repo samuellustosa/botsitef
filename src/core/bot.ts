@@ -1,13 +1,20 @@
 // src/core/bot.ts
 import { Telegraf } from 'telegraf';
 import { message } from 'telegraf/filters';
-import { errosSitef } from '../data/erros.js';
+import { errosSitef } from '../data/erros.ts';
 
 export function setupBot(bot: Telegraf) {
 
     // Responde ao comando /start
     bot.start((ctx) => {
-        ctx.reply('👋 Olá! Sou o seu bot de ajuda com erros do Sitef. Você pode me enviar o código do erro diretamente (ex: 51) ou usar o comando /erro <código>.');
+        ctx.reply('Olá! Sou o seu bot de ajuda com erros do Sitef. Você pode me enviar o código do erro diretamente (ex: 51), usar o comando /erro <código> ou usar /listar para ver todos os códigos disponíveis.');
+    });
+
+    // Novo comando para listar todos os códigos de erro
+    bot.command('listar', (ctx) => {
+        const codigos = Object.keys(errosSitef);
+        const listaDeCodigos = codigos.join(', ');
+        ctx.reply(`Esses são os códigos de erro disponíveis:\n\n${listaDeCodigos}`);
     });
 
     // Responde a qualquer mensagem de texto
