@@ -2,6 +2,7 @@
 import { Telegraf } from 'telegraf';
 import { setupBot } from '../core/bot.ts';
 import dotenv from 'dotenv';
+import safeCompare from 'safe-compare';
 
 dotenv.config();
 

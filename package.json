@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-"scripts": {
-  "start": "ts-node -r tsconfig-paths/register src/index.ts"
-},
+  "scripts": {
+    "start": "ts-node -r tsconfig-paths/register src/index.ts",
+    "set-webhook": "ts-node -r tsconfig-paths/register src/setWebhook.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "@types/node": "^24.5.2",
+    "@types/safe-compare": "^1.1.2",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.9.2"
