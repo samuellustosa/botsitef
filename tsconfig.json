@@ -8,9 +8,7 @@
     "strict": true,
     "skipLibCheck": true,
     "outDir": "./dist",
-    "lib": ["ESNext"],
-    "allowImportingTsExtensions": true,
-    "noEmit": true
+    "lib": ["ESNext"]
   },
   "include": ["src/**/*.ts", "api/**/*.ts"]
 }
